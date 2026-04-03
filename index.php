@@ -11,80 +11,208 @@ include 'partials/header.php';
 ?>
 
 <!-- ===== HERO ===== -->
-<section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+<section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden w-full">
   <!-- Animated background -->
   <div class="absolute inset-0 bg-gradient-to-br from-dark-nav via-dark-bg to-[#0A1628]"></div>
   <div class="absolute inset-0 hero-glow opacity-60"></div>
 
   <!-- Floating radio waves circles -->
   <div class="absolute inset-0 overflow-hidden pointer-events-none">
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 sm:w-72 sm:h-72 rounded-full border border-brand-red/10 animate-ping" style="animation-duration:4s"></div>
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 sm:w-96 sm:h-96 rounded-full border border-brand-blue/10 animate-ping" style="animation-duration:5s;animation-delay:1s"></div>
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 sm:w-[500px] sm:h-[500px] rounded-full border border-brand-red/5 animate-ping" style="animation-duration:6s;animation-delay:2s"></div>
   </div>
 
   <!-- Grid dots pattern -->
   <div class="absolute inset-0 opacity-5" style="background-image:radial-gradient(rgba(255,255,255,0.4) 1px, transparent 1px);background-size:32px 32px;"></div>
 
-  <!-- Hero content -->
-  <div class="relative z-10 text-center px-4 max-w-4xl mx-auto py-24">
-    <!-- Live badge -->
-    <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-brand-red/20 border border-brand-red/40 rounded-full text-brand-red text-sm font-bold mb-6 animate-fadeInUp">
-      <span class="live-dot w-2 h-2 rounded-full bg-brand-red"></span>
-      24/7 LIVE NOW ON AIR
-    </div>
+  <!-- Hero content (Two Columns) -->
+  <div class="relative z-10 px-4 w-full max-w-7xl mx-auto py-24 lg:py-32">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center w-full">
+      
+      <!-- L: Text Content -->
+      <div class="text-center lg:text-left space-y-8 animate-fadeInUp">
+        <!-- Live badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-brand-red/20 border border-brand-red/40 rounded-full text-brand-red text-sm font-bold shadow-[0_0_15px_rgba(220,38,38,0.2)]">
+          <span class="live-dot w-2 h-2 rounded-full bg-brand-red"></span>
+          24/7 LIVE NOW ON AIR
+        </div>
 
-    <!-- Headline -->
-    <h1 class="hero-title text-5xl sm:text-6xl lg:text-7xl font-black leading-tight mb-4 animate-fadeInUp delay-100">
-      <span class="text-white">Nesam Radio</span><br>
-      <span class="gradient-text">Radio with Love ❤️</span>
-    </h1>
+        <!-- Headline -->
+        <h1 class="hero-title text-5xl sm:text-6xl lg:text-7xl font-black leading-tight">
+          <span class="text-white">Nesam Radio</span><br>
+          <span class="gradient-text drop-shadow-md">Radio with Love ❤️</span>
+        </h1>
 
-    <!-- Sub-headline -->
-    <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto mb-8 animate-fadeInUp delay-200">
-      Live Tamil music, devotional songs, latest hits, news &amp; podcasts<br class="hidden sm:block">
-      – straight from the heart of Tamil Nadu. Listen anytime, anywhere.
-    </p>
+        <!-- Sub-headline -->
+        <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
+          Live Tamil music, devotional songs, latest hits, news &amp; podcasts
+          – straight from the heart of Tamil Nadu. Listen anytime, anywhere.
+        </p>
 
-    <!-- CTA buttons -->
-    <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp delay-300">
-      <button onclick="playStation('nesam-fm')" id="hero-listen-btn"
-              class="btn-primary text-base px-8 py-4 rounded-xl shadow-lg shadow-brand-red/30 group">
-        <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-        Listen Live Now
-      </button>
-      <a href="/stations.php" id="hero-stations-btn"
-         class="btn-outline text-base px-8 py-4 rounded-xl">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-.895 2-2 2s-2-.895-2-2 .895-2 2-2 2 .895 2 2zm12-3c0 1.105-.895 2-2 2s-2-.895-2-2 .895-2 2-2 2 .895 2 2z"/>
-        </svg>
-        Explore Stations
-      </a>
-    </div>
-
-    <!-- Now playing preview -->
-    <div class="mt-10 inline-flex items-center gap-3 px-5 py-3 glass-card rounded-2xl animate-fadeInUp delay-400">
-      <div class="eq-wrapper">
-        <div class="eq-bar h-3 bg-brand-red"></div>
-        <div class="eq-bar h-5 bg-brand-red"></div>
-        <div class="eq-bar h-2 bg-brand-blue"></div>
-        <div class="eq-bar h-4 bg-brand-blue"></div>
+        <!-- CTA buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <button onclick="playStation('nesam-fm')" id="hero-listen-btn"
+                  class="btn-primary text-base px-8 py-4 rounded-xl shadow-[0_0_20px_rgba(220,38,38,0.4)] group">
+            <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            Listen Live Now
+          </button>
+          <a href="/stations.php" id="hero-stations-btn" class="btn-outline text-base px-8 py-4 rounded-xl backdrop-blur-sm">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-.895 2-2 2s-2-.895-2-2 .895-2 2-2 2 .895 2 2zm12-3c0 1.105-.895 2-2 2s-2-.895-2-2 .895-2 2-2 2 .895 2 2z"/>
+            </svg>
+            Explore Stations
+          </a>
+        </div>
+        
+        <!-- Now playing preview -->
+        <div class="inline-flex items-center gap-3 px-5 py-3 glass-card rounded-2xl w-full sm:w-auto shadow-xl">
+          <div class="eq-wrapper">
+            <div class="eq-bar h-3 bg-brand-red"></div>
+            <div class="eq-bar h-5 bg-brand-red"></div>
+            <div class="eq-bar h-2 bg-brand-blue"></div>
+            <div class="eq-bar h-4 bg-brand-blue"></div>
+          </div>
+          <div class="text-left flex-1 min-w-0">
+            <div class="text-xs text-gray-400 uppercase tracking-wide font-bold">Now Playing</div>
+            <div id="hero-now-playing" class="text-sm font-bold text-white truncate w-48 sm:w-auto">Vellai Pookal – AR Rahman</div>
+          </div>
+          <div class="text-[10px] sm:text-xs px-2 py-1 bg-brand-red/20 border border-brand-red/30 text-brand-red rounded-full font-bold ml-auto whitespace-nowrap hidden sm:block">Nesam FM</div>
+        </div>
       </div>
-      <div class="text-left">
-        <div class="text-xs text-gray-400 uppercase tracking-wide">Now Playing</div>
-        <div id="hero-now-playing" class="text-sm font-semibold text-white">Vellai Pookal – AR Rahman</div>
+
+      <!-- R: Carousel Featured Slider -->
+      <div class="relative w-full max-w-lg mx-auto lg:max-w-none animate-fadeInUp delay-300">
+        <!-- Decoration behind slider -->
+        <div class="absolute -inset-2 sm:-inset-4 bg-gradient-to-tr from-brand-red/30 to-brand-blue/30 rounded-3xl blur-2xl opacity-60 z-0"></div>
+        
+        <div class="relative z-10 glass-card p-2 sm:p-3 rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10">
+          <!-- Slider Container -->
+          <div id="hero-carousel" class="relative overflow-hidden rounded-2xl aspect-[4/3] sm:aspect-video lg:aspect-[4/5] xl:aspect-[16/10] bg-dark-card group">
+            
+            <!-- Slide 1 -->
+            <div class="absolute inset-0 transition-opacity duration-700 ease-in-out carousel-slide opacity-100 z-10" data-index="0">
+              <img src="<?= BASE_PATH ?>/assets/images/hero_artist.png" class="w-full h-full object-cover object-center" alt="Featured Artist" onerror="this.src='<?= BASE_PATH ?>/assets/images/logo.png'">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#050A15]/90 via-[#050A15]/40 to-transparent"></div>
+              <div class="absolute bottom-0 left-0 p-5 sm:p-8 z-20 w-full text-left">
+                <span class="inline-block px-3 py-1 bg-brand-blue/90 backdrop-blur border border-brand-blue text-white text-xs font-bold rounded-full mb-3 shadow-[0_0_15px_rgba(30,111,187,0.6)]">🎤 Artist of the Week</span>
+                <h3 class="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-2 leading-tight drop-shadow-md">Anirudh Special Marathon</h3>
+                <p class="text-gray-300 text-sm sm:text-base line-clamp-2 drop-shadow">Join us this Saturday for a 4-hour musical journey through the rockstar's greatest hits.</p>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="absolute inset-0 transition-opacity duration-700 ease-in-out carousel-slide opacity-0 z-0" data-index="1">
+              <img src="<?= BASE_PATH ?>/assets/images/hero_event.png" class="w-full h-full object-cover object-center" alt="Special Event" onerror="this.src='<?= BASE_PATH ?>/assets/images/logo.png'">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#050A15]/90 via-[#050A15]/40 to-transparent"></div>
+              <div class="absolute bottom-0 left-0 p-5 sm:p-8 z-20 w-full text-left">
+                <span class="inline-block px-3 py-1 bg-yellow-500/90 backdrop-blur border border-yellow-400 text-black text-xs font-bold rounded-full mb-3 shadow-[0_0_15px_rgba(234,179,8,0.6)]">✨ Special Event</span>
+                <h3 class="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-2 leading-tight drop-shadow-md">Retro Weekend Flashback</h3>
+                <p class="text-gray-300 text-sm sm:text-base line-clamp-2 drop-shadow">Non-stop 80s & 90s classic hits from Ilaiyaraaja and Deva all weekend long.</p>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="absolute inset-0 transition-opacity duration-700 ease-in-out carousel-slide opacity-0 z-0" data-index="2">
+              <img src="<?= BASE_PATH ?>/assets/images/hero_studio.png" class="w-full h-full object-cover object-center" alt="Studio Behind the Scenes" onerror="this.src='<?= BASE_PATH ?>/assets/images/logo.png'">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#050A15]/90 via-[#050A15]/40 to-transparent"></div>
+              <div class="absolute bottom-0 left-0 p-5 sm:p-8 z-20 w-full text-left">
+                <span class="inline-block px-3 py-1 bg-brand-red/90 backdrop-blur border border-brand-red text-white text-xs font-bold rounded-full mb-3 shadow-[0_0_15px_rgba(220,38,38,0.6)]">📸 Inside Nesam Studio</span>
+                <h3 class="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-2 leading-tight drop-shadow-md">Catching Up With RJs</h3>
+                <p class="text-gray-300 text-sm sm:text-base line-clamp-2 drop-shadow">A peek into our studio sessions. Send in your voice notes to be featured live.</p>
+              </div>
+            </div>
+
+            <!-- Carousel Controls Overlay -->
+            <div class="absolute inset-y-0 left-0 flex items-center justify-start pl-2 sm:pl-4 z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <button id="carousel-prev" class="w-10 h-10 rounded-full bg-black/40 hover:bg-black/70 backdrop-blur border border-white/20 flex items-center justify-center text-white transition-all transform hover:scale-110" aria-label="Previous slide">
+                <svg class="w-5 h-5 pr-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg>
+              </button>
+            </div>
+            <div class="absolute inset-y-0 right-0 flex items-center justify-end pr-2 sm:pr-4 z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <button id="carousel-next" class="w-10 h-10 rounded-full bg-black/40 hover:bg-black/70 backdrop-blur border border-white/20 flex items-center justify-center text-white transition-all transform hover:scale-110" aria-label="Next slide">
+                <svg class="w-5 h-5 pl-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+            
+            <!-- Indicators -->
+            <div class="absolute top-5 right-5 z-30 flex gap-2" id="carousel-indicators">
+              <div class="w-8 h-1.5 rounded-full bg-white shadow-sm transition-all duration-300 indicator-dot cursor-pointer" aria-label="Slide 1"></div>
+              <div class="w-2.5 h-1.5 rounded-full bg-white/40 hover:bg-white/70 shadow-sm transition-all duration-300 indicator-dot cursor-pointer" aria-label="Slide 2"></div>
+              <div class="w-2.5 h-1.5 rounded-full bg-white/40 hover:bg-white/70 shadow-sm transition-all duration-300 indicator-dot cursor-pointer" aria-label="Slide 3"></div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="text-xs px-2 py-1 bg-brand-red/20 text-brand-red rounded-full font-bold">Nesam FM</div>
+      
     </div>
   </div>
 
-  <!-- Scroll indicator -->
-  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce-sm">
-    <div class="w-6 h-10 border-2 border-white/20 rounded-full flex justify-center pt-2">
-      <div class="w-1 h-3 bg-white/40 rounded-full"></div>
+  <!-- Scroll indicator (Desktop only) -->
+  <div class="hidden lg:block absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce-sm z-20">
+    <div class="w-7 h-12 border-2 border-white/30 rounded-full flex justify-center pt-2.5">
+      <div class="w-1.5 h-3 bg-white/60 rounded-full"></div>
     </div>
   </div>
 </section>
+
+<!-- Hero Carousel Script -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const slides = document.querySelectorAll('.carousel-slide');
+  const dots = document.querySelectorAll('.indicator-dot');
+  const prevBtn = document.getElementById('carousel-prev');
+  const nextBtn = document.getElementById('carousel-next');
+  
+  if (!slides.length) return;
+  
+  let currentIndex = 0;
+  let autoPlayInterval;
+  
+  function showSlide(index) {
+    // Update index with boundary logic
+    currentIndex = index;
+    if (currentIndex >= slides.length) currentIndex = 0;
+    if (currentIndex < 0) currentIndex = slides.length - 1;
+    
+    slides.forEach((s, i) => {
+      if (i === currentIndex) {
+        s.classList.remove('opacity-0', 'z-0');
+        s.classList.add('opacity-100', 'z-10');
+      } else {
+        s.classList.remove('opacity-100', 'z-10');
+        s.classList.add('opacity-0', 'z-0');
+      }
+    });
+
+    dots.forEach((d, i) => {
+      if (i === currentIndex) {
+        d.classList.remove('w-2.5', 'bg-white/40');
+        d.classList.add('w-8', 'bg-white');
+      } else {
+        d.classList.remove('w-8', 'bg-white');
+        d.classList.add('w-2.5', 'bg-white/40');
+      }
+    });
+    resetInterval();
+  }
+  
+  function nextSlide() { showSlide(currentIndex + 1); }
+  function prevSlide() { showSlide(currentIndex - 1); }
+  
+  function resetInterval() {
+    clearInterval(autoPlayInterval);
+    autoPlayInterval = setInterval(nextSlide, 5000);
+  }
+  
+  if(nextBtn) nextBtn.addEventListener('click', nextSlide);
+  if(prevBtn) prevBtn.addEventListener('click', prevSlide);
+  
+  dots.forEach((dot, idx) => {
+    dot.addEventListener('click', () => showSlide(idx));
+  });
+  
+  resetInterval();
+});
+</script>
 
 <!-- ===== TRUST BAR ===== -->
 <section id="trust-bar" class="bg-dark-card border-y border-dark-border py-5">
