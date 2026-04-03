@@ -7,7 +7,7 @@ $canonUrl  = SITE_URL . '/';
 
 $streams = json_decode(STREAMS, true);
 
-include 'partials/header.php';
+include_once 'partials/header.php';
 ?>
 
 <!-- ===== HERO ===== -->
@@ -38,8 +38,8 @@ include 'partials/header.php';
 
         <!-- Headline -->
         <h1 class="hero-title text-5xl sm:text-6xl lg:text-7xl font-black leading-tight">
-          <span class="text-white">Nesam Radio</span><br>
-          <span class="gradient-text drop-shadow-md">Radio with Love ❤️</span>
+          <span class="text-white">Nesam Media</span><br>
+          <span class="gradient-text drop-shadow-md text-3xl sm:text-4xl lg:text-5xl mt-2 block">24/7 Tamil Inspirational Radio</span>
         </h1>
 
         <!-- Sub-headline -->

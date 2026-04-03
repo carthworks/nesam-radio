@@ -103,16 +103,20 @@ html.light strong.text-white           { color: #1E293B !important; }
 html.light .text-gray-500              { color: #64748B !important; }
 
 /* ─── Light mode: stations section ─── */
-html.light #stations                   { background: #F8FAFC !important; }
-html.light #stations [class*="bg-gradient-to-br"] { background: #FFFFFF !important; }
-html.light #stations [class*="border-"]           { border-color: #E2E8F0 !important; }
-html.light #stations h3.text-white     { color: #1E293B !important; }
-html.light #stations .text-gray-500    { color: #64748B !important; }
-html.light #stations .text-gray-400    { color: var(--muted) !important; }
-html.light #stations [class*="bg-black/40"] { background: rgba(255,255,255,0.9) !important; }
-html.light #stations [class*="bg-black/40"] span.text-white { color: #DC2626 !important; }
-html.light #stations button[class*="bg-white/10"] { background: #F1F5F9 !important; color: #334155 !important; border: 1px solid #E2E8F0; }
-html.light #stations button[class*="bg-white/10"]:hover { background: #DC2626 !important; color: #fff !important; border-color: #DC2626 !important; }
+html.light #stations, html.light #stations-page { background: #F8FAFC !important; }
+html.light #stations [class*="bg-gradient-to-br"], html.light #stations-page [class*="bg-gradient-to-br"] { background: #FFFFFF !important; }
+html.light #stations [class*="border-"], html.light #stations-page [class*="border-"] { border-color: #E2E8F0 !important; }
+html.light #stations h3.text-white, html.light #stations-page h2.text-white { color: #1E293B !important; }
+html.light #stations .text-gray-500, html.light #stations-page .text-gray-500 { color: #64748B !important; }
+html.light #stations .text-gray-400, html.light #stations-page .text-gray-400 { color: var(--muted) !important; }
+html.light #stations [class*="bg-black/40"], html.light #stations-page [class*="bg-black/40"] { background: rgba(255,255,255,0.9) !important; }
+html.light #stations [class*="bg-black/40"] span.text-white, html.light #stations-page [class*="bg-black/40"] span.text-white { color: #DC2626 !important; }
+html.light #stations button[class*="bg-white/10"], html.light #stations-page button[class*="bg-white/10"] { background: #F1F5F9 !important; color: #334155 !important; border: 1px solid #E2E8F0; }
+html.light #stations button[class*="bg-white/10"]:hover, html.light #stations-page button[class*="bg-white/10"]:hover { background: #DC2626 !important; color: #fff !important; border-color: #DC2626 !important; }
+
+/* ─── Light mode: Preserve White Text Over Images ─── */
+html.light .carousel-slide h3,
+html.light .carousel-slide p { color: #FFFFFF !important; }
 
 /* ─── Light mode: stats cards (welcome section) ─── */
 html.light #welcome [class*="bg-gradient-to-br"][class*="border-white/5"] { background: #FFFFFF !important; border-color: #E2E8F0 !important; box-shadow: 0 1px 3px rgba(0,0,0,0.07); }

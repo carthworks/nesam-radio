@@ -61,9 +61,14 @@ include 'partials/header.php';
             <div id="player-icon" class="text-7xl mb-4">🎬</div>
 
             <!-- Station name / now playing -->
-            <div id="player-station-name" class="text-brand-red font-bold text-sm uppercase tracking-widest mb-1">Nesam FM</div>
-            <h2 id="player-song-title" class="text-2xl sm:text-3xl font-black text-white mb-1">Vellai Pookal</h2>
-            <div id="player-artist" class="text-gray-400 mb-6">AR Rahman · Tamil Film Hits</div>
+            <div class="flex items-center justify-center gap-2 mb-2">
+              <span id="main-live-dot" class="live-dot w-2 h-2 rounded-full bg-brand-red flex-shrink-0"></span>
+              <div id="player-station-name" class="text-brand-red font-bold text-sm uppercase tracking-widest">Nesam FM</div>
+              <div id="main-stream-status" class="px-2 py-0.5 bg-brand-red/20 border border-brand-red/30 text-brand-red rounded-full text-[10px] font-bold uppercase tracking-wide ml-1">Live</div>
+            </div>
+            <div class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mb-1">Now Playing</div>
+            <h2 id="player-song-title" class="text-2xl sm:text-3xl font-black text-white mb-1 leading-tight">Vellai Pookal</h2>
+            <div id="player-artist" class="text-gray-400 text-sm font-medium mb-6">AR Rahman · Tamil Film Hits</div>
 
             <!-- EQ Bars (shows when playing) -->
             <div id="player-eq" class="flex justify-center gap-2 mb-6 opacity-0 transition-opacity duration-300">

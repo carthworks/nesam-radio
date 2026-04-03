@@ -65,7 +65,7 @@ $strippedPath = '/' . ltrim($strippedPath ?: '/', '/');
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Tamil:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Noto+Sans+Tamil:wght@400;600;700&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS (CDN with config – fine for shared hosting, no build step needed) -->
   <script>
@@ -95,7 +95,7 @@ $strippedPath = '/' . ltrim($strippedPath ?: '/', '/');
             }
           },
           fontFamily: {
-            sans:  ['Inter', 'Noto Sans Tamil', 'system-ui', 'sans-serif'],
+            sans:  ['Outfit', 'Noto Sans Tamil', 'system-ui', 'sans-serif'],
             tamil: ['Noto Sans Tamil', 'system-ui', 'sans-serif'],
           },
           animation: {
@@ -138,8 +138,8 @@ $strippedPath = '/' . ltrim($strippedPath ?: '/', '/');
       <a href="<?= $bp ?>/" class="flex items-center gap-3 group" id="nav-logo">
         <img src="<?= $logoSrc ?>" alt="Nesam Media Logo" class="h-10 w-auto">
         <div class="hidden sm:block">
-          <div class="text-lg font-bold text-white leading-tight">Nesam Radio</div>
-          <div class="text-[10px] text-brand-red font-semibold tracking-widest uppercase">Radio with Love ❤️</div>
+          <div class="text-lg font-bold text-white leading-tight">Nesam Media</div>
+          <div class="text-[10px] text-brand-red font-semibold tracking-widest uppercase">24/7 Tamil Inspirational Radio</div>
         </div>
       </a>
 

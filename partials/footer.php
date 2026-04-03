@@ -17,11 +17,15 @@
 
     <!-- Info -->
     <div class="flex-1 min-w-0">
-      <div class="flex items-center gap-2">
-        <span class="live-dot w-2 h-2 rounded-full bg-brand-red flex-shrink-0"></span>
-        <span id="np-station" class="text-xs font-semibold text-brand-red uppercase tracking-wide">Nesam FM</span>
+      <div class="flex items-center gap-2 mb-0.5">
+        <span class="live-dot w-2 h-2 rounded-full bg-brand-red flex-shrink-0" id="sticky-live-dot"></span>
+        <span id="np-station" class="text-[10px] sm:text-xs font-bold text-brand-red uppercase tracking-widest">Nesam FM</span>
+        <span id="sticky-stream-status" class="px-1.5 py-0.5 bg-brand-red/20 border border-brand-red/30 text-brand-red rounded-sm text-[9px] font-bold uppercase tracking-wider ml-0.5">Live</span>
       </div>
-      <div id="np-song" class="text-sm font-medium text-white truncate">Loading...</div>
+      <div class="flex items-baseline gap-1.5">
+        <span class="text-[10px] text-gray-500 uppercase tracking-widest font-bold hidden sm:inline-block flex-shrink-0">Now Playing:</span>
+        <div id="np-song" class="text-xs sm:text-sm font-semibold text-white truncate w-full">Loading...</div>
+      </div>
     </div>
 
     <!-- Progress (visual only for live) -->
