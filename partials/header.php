@@ -1,6 +1,17 @@
 <?php
 // partials/header.php
 // Usage: include 'partials/header.php';  ($pageTitle & $pageDesc should be set before including)
+// https://github.com/williamcjacobs/php-multilang
+require_once __DIR__ . '/../includes/MultiLang.php';
+$ml = new MultiLang(true, false);
+if (isset($_GET['lang'])) {
+    $langMap = ['ta' => 'TA', 'other' => 'EN'];
+    $setL = $langMap[strtolower($_GET['lang'])] ?? 'TA';
+    $ml->setLanguage($setL);
+    header("Location: " . strtok($_SERVER["REQUEST_URI"], '?'));
+    exit;
+}
+
 $pageTitle = $pageTitle ?? 'Nesam Radio – Tamil Online Radio | Live Tamil Music & Podcasts';
 $pageDesc  = $pageDesc  ?? 'Nesam Radio is your 24/7 live Tamil online radio – film hits, devotional, news, retro, kids, and podcasts. Made with love in Tamil Nadu.';
 $pageKw    = $pageKw    ?? 'Tamil radio, Tamil online radio, Tamil FM, Tamil music, Nesam Radio, live Tamil streaming, Tamil devotional, Kollywood hits';
@@ -138,7 +149,7 @@ $strippedPath = '/' . ltrim($strippedPath ?: '/', '/');
       <a href="<?= $bp ?>/" class="flex items-center gap-3 group" id="nav-logo">
         <img src="<?= $logoSrc ?>" alt="Nesam Media Logo" class="h-10 w-auto">
         <div class="hidden sm:block">
-          <div class="text-lg font-bold text-white leading-tight">Nesam Media</div>
+          <div class="text-lg font-bold text-white leading-tight"> <?= $ml->tr('Nesam Media') ?></div>
           <div class="text-[10px] text-brand-red font-semibold tracking-widest uppercase">24/7 Tamil Inspirational Radio</div>
         </div>
       </a>
@@ -172,6 +183,21 @@ $strippedPath = '/' . ltrim($strippedPath ?: '/', '/');
 
       <!-- Right actions -->
       <div class="flex items-center gap-2">
+        <!-- Language Switcher -->
+        <div class="relative group">
+          <button aria-label="Language Menu" class="flex items-center gap-1 p-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/10 transition-colors">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/></svg>
+            <span class="hidden sm:inline font-semibold text-xs"><?= $ml->language() === 'EN' ? 'EN' : 'TA' ?></span>
+            <svg class="w-3 h-3 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="absolute right-0 top-full pt-1 w-40 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <div class="bg-dark-card border border-dark-border rounded-xl shadow-xl overflow-hidden py-1">
+              <a href="?lang=ta" class="block px-4 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-brand-blue/20 transition-colors">Tamil</a>
+              <a href="?lang=other" class="block px-4 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-brand-blue/20 transition-colors">Other Languages</a>
+            </div>
+          </div>
+        </div>
+
         <!-- Live badge -->
         <a href="<?= $bp ?>/live.php" id="nav-live-btn"
            class="hidden sm:flex items-center gap-2 px-3 py-1.5 bg-brand-red text-white text-xs font-bold rounded-full hover:bg-brand-redDk transition-colors">
