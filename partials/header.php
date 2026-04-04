@@ -149,8 +149,8 @@ $strippedPath = '/' . ltrim($strippedPath ?: '/', '/');
       <a href="<?= $bp ?>/" class="flex items-center gap-3 group" id="nav-logo">
         <img src="<?= $logoSrc ?>" alt="Nesam Media Logo" class="h-10 w-auto">
         <div class="hidden sm:block">
-          <div class="text-lg font-bold text-white leading-tight"> <?= $ml->tr('Nesam Media') ?></div>
-          <div class="text-[10px] text-brand-red font-semibold tracking-widest uppercase">24/7 Tamil Inspirational Radio</div>
+          <div class="text-lg font-bold text-white leading-tight"> <?= $ml->tr('nesam media') ?></div>
+          <div class="text-[10px] text-brand-red font-semibold tracking-widest uppercase"> <?= $ml->tr('24/7 Tamil Inspirational Radio') ?></div>
         </div>
       </a>
 
@@ -176,7 +176,7 @@ $strippedPath = '/' . ltrim($strippedPath ?: '/', '/');
         <a href="<?= $href ?>" id="nav-<?= strtolower(str_replace([' ', '.php'], ['-', ''], $label)) ?>"
           class="px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200
                  <?= $active ? 'text-white bg-brand-blue/20 border border-brand-blue/30' : 'text-gray-300 hover:text-white hover:bg-white/5' ?>">
-          <?= $label ?>
+          <?= $ml->tr($label) ?>
         </a>
         <?php endforeach; ?>
       </div>
@@ -192,8 +192,8 @@ $strippedPath = '/' . ltrim($strippedPath ?: '/', '/');
           </button>
           <div class="absolute right-0 top-full pt-1 w-40 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
             <div class="bg-dark-card border border-dark-border rounded-xl shadow-xl overflow-hidden py-1">
-              <a href="?lang=ta" class="block px-4 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-brand-blue/20 transition-colors">Tamil</a>
-              <a href="?lang=other" class="block px-4 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-brand-blue/20 transition-colors">Other Languages</a>
+              <a href="?lang=ta" class="block px-4 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-brand-blue/20 transition-colors"><?= $ml->tr('Tamil') ?></a>
+              <a href="?lang=other" class="block px-4 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-brand-blue/20 transition-colors"><?= $ml->tr('Other Languages') ?></a>
             </div>
           </div>
         </div>
@@ -202,7 +202,7 @@ $strippedPath = '/' . ltrim($strippedPath ?: '/', '/');
         <a href="<?= $bp ?>/live.php" id="nav-live-btn"
            class="hidden sm:flex items-center gap-2 px-3 py-1.5 bg-brand-red text-white text-xs font-bold rounded-full hover:bg-brand-redDk transition-colors">
           <span class="live-dot w-2 h-2 rounded-full bg-white"></span>
-          LIVE
+          <?= $ml->tr('LIVE') ?>
         </a>
         <!-- Dark/Light toggle: shows what you switch TO (sun in dark, moon in light) -->
         <button id="theme-toggle" aria-label="Toggle dark/light mode"
@@ -241,11 +241,11 @@ $strippedPath = '/' . ltrim($strippedPath ?: '/', '/');
       <a href="<?= $href ?>"
          class="block px-4 py-2.5 rounded-lg text-sm font-medium transition-colors
                 <?= $active ? 'text-white bg-brand-blue/20 border border-brand-blue/30' : 'text-gray-300 hover:text-white hover:bg-white/5' ?>">
-        <?= $label ?>
+        <?= $ml->tr($label) ?>
       </a>
       <?php endforeach; ?>
       <a href="<?= $bp ?>/live.php" class="flex items-center gap-2 px-4 py-2.5 bg-brand-red rounded-lg text-white text-sm font-bold mt-2">
-        <span class="live-dot w-2 h-2 rounded-full bg-white"></span> Listen Live Now
+        <span class="live-dot w-2 h-2 rounded-full bg-white"></span> <?= $ml->tr('Listen Live Now') ?>
       </a>
     </div>
   </div>

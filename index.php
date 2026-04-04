@@ -27,7 +27,7 @@ include_once 'partials/header.php';
   <!-- Hero content (Two Columns) -->
   <div class="relative z-10 px-4 w-full max-w-7xl mx-auto py-24 lg:py-32">
     <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center w-full">
-      
+
       <!-- L: Text Content -->
       <div class="text-center lg:text-left space-y-8 animate-fadeInUp">
         <!-- Live badge -->
@@ -38,14 +38,14 @@ include_once 'partials/header.php';
 
         <!-- Headline -->
         <h1 class="hero-title text-5xl sm:text-6xl lg:text-7xl font-black leading-tight">
-          <span class="text-white">Nesam Media</span><br>
-          <span class="gradient-text drop-shadow-md text-3xl sm:text-4xl lg:text-5xl mt-2 block">24/7 Tamil Inspirational Radio</span>
+          <span class="text-white"><?= $ml->tr('Nesam Media') ?></span><br>
+          <span class="gradient-text drop-shadow-md text-3xl sm:text-4xl lg:text-5xl mt-2 block"> <?= $ml->tr('24/7 Tamil Inspirational Radio') ?></span>
         </h1>
 
         <!-- Sub-headline -->
         <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
-          Live Tamil music, devotional songs, latest hits, news &amp; podcasts
-          – straight from the heart of Tamil Nadu. Listen anytime, anywhere.
+          <?= $ml->tr(' Live Tamil music, devotional songs, latest hits, news &amp; podcasts
+          – straight from the heart of Tamil Nadu. Listen anytime, anywhere.') ?>
         </p>
 
         <!-- CTA buttons -->
@@ -53,16 +53,16 @@ include_once 'partials/header.php';
           <button onclick="playStation('nesam-fm')" id="hero-listen-btn"
                   class="btn-primary text-base px-8 py-4 rounded-xl shadow-[0_0_20px_rgba(220,38,38,0.4)] group">
             <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-            Listen Live Now
+            <?= $ml->tr('Listen Live Now') ?>
           </button>
           <a href="/stations.php" id="hero-stations-btn" class="btn-outline text-base px-8 py-4 rounded-xl backdrop-blur-sm">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-.895 2-2 2s-2-.895-2-2 .895-2 2-2 2 .895 2 2zm12-3c0 1.105-.895 2-2 2s-2-.895-2-2 .895-2 2-2 2 .895 2 2z"/>
             </svg>
-            Explore Stations
+            <?= $ml->tr('Explore Stations') ?>
           </a>
         </div>
-        
+
         <!-- Now playing preview -->
         <div class="inline-flex items-center gap-3 px-5 py-3 glass-card rounded-2xl w-full sm:w-auto shadow-xl">
           <div class="eq-wrapper">
@@ -72,7 +72,7 @@ include_once 'partials/header.php';
             <div class="eq-bar h-4 bg-brand-blue"></div>
           </div>
           <div class="text-left flex-1 min-w-0">
-            <div class="text-xs text-gray-400 uppercase tracking-wide font-bold">Now Playing</div>
+            <div class="text-xs text-gray-400 uppercase tracking-wide font-bold"><?= $ml->tr('Now Playing') ?></div>
             <div id="hero-now-playing" class="text-sm font-bold text-white truncate w-48 sm:w-auto">Vellai Pookal – AR Rahman</div>
           </div>
           <div class="text-[10px] sm:text-xs px-2 py-1 bg-brand-red/20 border border-brand-red/30 text-brand-red rounded-full font-bold ml-auto whitespace-nowrap hidden sm:block">Nesam FM</div>
@@ -83,19 +83,19 @@ include_once 'partials/header.php';
       <div class="relative w-full max-w-lg mx-auto lg:max-w-none animate-fadeInUp delay-300">
         <!-- Decoration behind slider -->
         <div class="absolute -inset-2 sm:-inset-4 bg-gradient-to-tr from-brand-red/30 to-brand-blue/30 rounded-3xl blur-2xl opacity-60 z-0"></div>
-        
+
         <div class="relative z-10 glass-card p-2 sm:p-3 rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10">
           <!-- Slider Container -->
           <div id="hero-carousel" class="relative overflow-hidden rounded-2xl aspect-[4/3] sm:aspect-video lg:aspect-[4/5] xl:aspect-[16/10] bg-dark-card group">
-            
+
             <!-- Slide 1 -->
             <div class="absolute inset-0 transition-opacity duration-700 ease-in-out carousel-slide opacity-100 z-10" data-index="0">
               <img src="<?= BASE_PATH ?>/assets/images/hero_artist.png" class="w-full h-full object-cover object-center" alt="Featured Artist" onerror="this.src='<?= BASE_PATH ?>/assets/images/logo.png'">
               <div class="absolute inset-0 bg-gradient-to-t from-[#050A15]/90 via-[#050A15]/40 to-transparent"></div>
               <div class="absolute bottom-0 left-0 p-5 sm:p-8 z-20 w-full text-left">
-                <span class="inline-block px-3 py-1 bg-brand-blue/90 backdrop-blur border border-brand-blue text-white text-xs font-bold rounded-full mb-3 shadow-[0_0_15px_rgba(30,111,187,0.6)]">🎤 Artist of the Week</span>
-                <h3 class="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-2 leading-tight drop-shadow-md">Anirudh Special Marathon</h3>
-                <p class="text-gray-300 text-sm sm:text-base line-clamp-2 drop-shadow">Join us this Saturday for a 4-hour musical journey through the rockstar's greatest hits.</p>
+                <span class="inline-block px-3 py-1 bg-brand-blue/90 backdrop-blur border border-brand-blue text-white text-xs font-bold rounded-full mb-3 shadow-[0_0_15px_rgba(30,111,187,0.6)]">🎤 <?= $ml->tr('Artist of the Week') ?></span>
+                <h3 class="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-2 leading-tight drop-shadow-md"><?= $ml->tr('Anirudh Special Marathon') ?></h3>
+                <p class="text-gray-300 text-sm sm:text-base line-clamp-2 drop-shadow"><?= $ml->tr("Join us this Saturday for a 4-hour musical journey through the rockstar's greatest hits.") ?></p>
               </div>
             </div>
 
@@ -104,9 +104,9 @@ include_once 'partials/header.php';
               <img src="<?= BASE_PATH ?>/assets/images/hero_event.png" class="w-full h-full object-cover object-center" alt="Special Event" onerror="this.src='<?= BASE_PATH ?>/assets/images/logo.png'">
               <div class="absolute inset-0 bg-gradient-to-t from-[#050A15]/90 via-[#050A15]/40 to-transparent"></div>
               <div class="absolute bottom-0 left-0 p-5 sm:p-8 z-20 w-full text-left">
-                <span class="inline-block px-3 py-1 bg-yellow-500/90 backdrop-blur border border-yellow-400 text-black text-xs font-bold rounded-full mb-3 shadow-[0_0_15px_rgba(234,179,8,0.6)]">✨ Special Event</span>
-                <h3 class="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-2 leading-tight drop-shadow-md">Retro Weekend Flashback</h3>
-                <p class="text-gray-300 text-sm sm:text-base line-clamp-2 drop-shadow">Non-stop 80s & 90s classic hits from Ilaiyaraaja and Deva all weekend long.</p>
+                <span class="inline-block px-3 py-1 bg-yellow-500/90 backdrop-blur border border-yellow-400 text-black text-xs font-bold rounded-full mb-3 shadow-[0_0_15px_rgba(234,179,8,0.6)]">✨ <?= $ml->tr('Special Event') ?></span>
+                <h3 class="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-2 leading-tight drop-shadow-md"><?= $ml->tr('Retro Weekend Flashback') ?></h3>
+                <p class="text-gray-300 text-sm sm:text-base line-clamp-2 drop-shadow"><?= $ml->tr('Non-stop 80s & 90s classic hits from Ilaiyaraaja and Deva all weekend long.') ?></p>
               </div>
             </div>
 
@@ -115,9 +115,9 @@ include_once 'partials/header.php';
               <img src="<?= BASE_PATH ?>/assets/images/hero_studio.png" class="w-full h-full object-cover object-center" alt="Studio Behind the Scenes" onerror="this.src='<?= BASE_PATH ?>/assets/images/logo.png'">
               <div class="absolute inset-0 bg-gradient-to-t from-[#050A15]/90 via-[#050A15]/40 to-transparent"></div>
               <div class="absolute bottom-0 left-0 p-5 sm:p-8 z-20 w-full text-left">
-                <span class="inline-block px-3 py-1 bg-brand-red/90 backdrop-blur border border-brand-red text-white text-xs font-bold rounded-full mb-3 shadow-[0_0_15px_rgba(220,38,38,0.6)]">📸 Inside Nesam Studio</span>
-                <h3 class="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-2 leading-tight drop-shadow-md">Catching Up With RJs</h3>
-                <p class="text-gray-300 text-sm sm:text-base line-clamp-2 drop-shadow">A peek into our studio sessions. Send in your voice notes to be featured live.</p>
+                <span class="inline-block px-3 py-1 bg-brand-red/90 backdrop-blur border border-brand-red text-white text-xs font-bold rounded-full mb-3 shadow-[0_0_15px_rgba(220,38,38,0.6)]">📸 <?= $ml->tr('Inside Nesam Studio') ?></span>
+                <h3 class="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-2 leading-tight drop-shadow-md"><?= $ml->tr('Catching Up With RJs') ?></h3>
+                <p class="text-gray-300 text-sm sm:text-base line-clamp-2 drop-shadow"><?= $ml->tr('A peek into our studio sessions. Send in your voice notes to be featured live.') ?></p>
               </div>
             </div>
 
@@ -132,7 +132,7 @@ include_once 'partials/header.php';
                 <svg class="w-5 h-5 pl-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
               </button>
             </div>
-            
+
             <!-- Indicators -->
             <div class="absolute top-5 right-5 z-30 flex gap-2" id="carousel-indicators">
               <div class="w-8 h-1.5 rounded-full bg-white shadow-sm transition-all duration-300 indicator-dot cursor-pointer" aria-label="Slide 1"></div>
@@ -142,7 +142,7 @@ include_once 'partials/header.php';
           </div>
         </div>
       </div>
-      
+
     </div>
   </div>
 
@@ -161,18 +161,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const dots = document.querySelectorAll('.indicator-dot');
   const prevBtn = document.getElementById('carousel-prev');
   const nextBtn = document.getElementById('carousel-next');
-  
+
   if (!slides.length) return;
-  
+
   let currentIndex = 0;
   let autoPlayInterval;
-  
+
   function showSlide(index) {
     // Update index with boundary logic
     currentIndex = index;
     if (currentIndex >= slides.length) currentIndex = 0;
     if (currentIndex < 0) currentIndex = slides.length - 1;
-    
+
     slides.forEach((s, i) => {
       if (i === currentIndex) {
         s.classList.remove('opacity-0', 'z-0');
@@ -194,22 +194,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     resetInterval();
   }
-  
+
   function nextSlide() { showSlide(currentIndex + 1); }
   function prevSlide() { showSlide(currentIndex - 1); }
-  
+
   function resetInterval() {
     clearInterval(autoPlayInterval);
     autoPlayInterval = setInterval(nextSlide, 5000);
   }
-  
+
   if(nextBtn) nextBtn.addEventListener('click', nextSlide);
   if(prevBtn) prevBtn.addEventListener('click', prevSlide);
-  
+
   dots.forEach((dot, idx) => {
     dot.addEventListener('click', () => showSlide(idx));
   });
-  
+
   resetInterval();
 });
 </script>
@@ -219,10 +219,10 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="max-w-7xl mx-auto px-4">
     <div class="flex flex-wrap justify-center gap-6 sm:gap-10 text-center">
       <?php foreach ([
-        ['10,000+','Daily Listeners','❤️'],
-        ['24/7',   'Live Broadcast', '📻'],
-        ['6+',     'Channels',       '🎵'],
-        ['Made in','Tamil Nadu &amp; Puducherry','🌟'],
+        ['10,000+',$ml->tr('Daily Listeners'),'❤️'],
+        ['24/7',   $ml->tr('Live Broadcast'), '📻'],
+        ['6+',     $ml->tr('Channels'),       '🎵'],
+        [$ml->tr('Made in'),'Tamil Nadu &amp; Puducherry','🌟'],
       ] as [$num,$lbl,$icon]): ?>
       <div class="animate-on-scroll">
         <div class="text-2xl font-black text-white"><?= $icon ?> <?= $num ?></div>
@@ -241,11 +241,10 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="animate-on-scroll">
         <span class="section-badge mb-4">❤️ Welcome to Nesam</span>
         <h2 class="section-title text-3xl sm:text-4xl font-black text-white mb-4 leading-tight">
-          Your One-Stop Tamil<br>Entertainment Destination
+          <?= $ml->tr('Your One-Stop Tamil<br>Entertainment Destination') ?>
         </h2>
         <p class="text-gray-400 text-lg leading-relaxed mb-4">
-          Welcome to <strong class="text-white">Nesam Media Works</strong> – your one-stop digital entertainment destination.
-          We bring you the best of Tamil web radio, podcasts, audiobooks, devotional content, film music, and regional hits.
+          <?= $ml->tr('Welcome to <strong class="text-white">Nesam Media Works</strong> – your one-stop digital entertainment destination. We bring you the best of Tamil web radio, podcasts, audiobooks, devotional content, film music, and regional hits.') ?>
         </p>
         <p class="text-gray-400 leading-relaxed mb-6">
           Whether you're in Chennai, Puducherry, or anywhere in the world, Nesam Radio keeps you connected to your roots and rhythms.
@@ -254,19 +253,19 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="flex gap-3 flex-wrap">
           <a href="/live.php" id="welcome-listen-btn" class="btn-primary">
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-            Start Listening Free →
+            <?= $ml->tr('Start Listening Free →') ?>
           </a>
-          <a href="/about.php" class="btn-outline">Learn Our Story</a>
+          <a href="/about.php" class="btn-outline"><?= $ml->tr('Learn Our Story') ?></a>
         </div>
       </div>
 
       <!-- Stats cards -->
       <div class="grid grid-cols-2 gap-4 animate-on-scroll">
         <?php foreach ([
-          ['12,450+','Monthly Active Listeners','text-brand-red','from-brand-red/20 to-transparent'],
-          ['98%',    'Recommendation Rate',      'text-brand-blue','from-brand-blue/20 to-transparent'],
-          ['4.9/5',  'Average Rating ⭐',         'text-yellow-400','from-yellow-500/20 to-transparent'],
-          ['20+ yrs','Combined Experience',       'text-green-400', 'from-green-500/20 to-transparent'],
+          ['12,450+',$ml->tr('Monthly Active Listeners'),'text-brand-red','from-brand-red/20 to-transparent'],
+          ['98%',    $ml->tr('Recommendation Rate'),      'text-brand-blue','from-brand-blue/20 to-transparent'],
+          ['4.9/5',  $ml->tr('Average Rating ⭐'),         'text-yellow-400','from-yellow-500/20 to-transparent'],
+          ['20+ yrs',$ml->tr('Combined Experience'),       'text-green-400', 'from-green-500/20 to-transparent'],
         ] as [$n,$l,$color,$grad]): ?>
         <div class="p-6 rounded-2xl bg-gradient-to-br <?= $grad ?> border border-white/5 card-hover">
           <div class="text-3xl font-black <?= $color ?> mb-1"><?= $n ?></div>
@@ -282,20 +281,20 @@ document.addEventListener('DOMContentLoaded', () => {
 <section id="stations" class="py-20 px-4 bg-dark-card">
   <div class="max-w-7xl mx-auto">
     <div class="text-center mb-12 animate-on-scroll">
-      <span class="section-badge mb-4">📻 Channels</span>
-      <h2 class="text-3xl sm:text-4xl font-black text-white mb-3">Discover Your Favourite Channel</h2>
-      <p class="text-gray-400 max-w-xl mx-auto">Six handcrafted channels for every mood. Film hits to devotional, retro classics to kids – all in Tamil, all with love.</p>
+      <span class="section-badge mb-4">📻 <?= $ml->tr('Channels') ?></span>
+      <h2 class="text-3xl sm:text-4xl font-black text-white mb-3"><?= $ml->tr('Discover Your Favourite Channel') ?></h2>
+      <p class="text-gray-400 max-w-xl mx-auto"><?= $ml->tr('Six handcrafted channels for every mood. Film hits to devotional, retro classics to kids – all in Tamil, all with love.') ?></p>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <?php
       $stationCards = [
-        ['nesam-fm',        'Nesam FM',         'Tamil Film Hits & Classics', 'Non-stop entertainment', '🎬', 'from-red-900/40 to-dark-card',    'border-brand-red/30'],
-        ['nesam-devotional','Nesam Devotional',  'Devotional & Bhajans',        'Peace for your soul',    '🕉️', 'from-yellow-900/30 to-dark-card',  'border-yellow-500/30'],
-        ['nesam-news',      'Nesam News',         'Tamil Nadu & India News',     'Stay updated in Tamil',  '📰', 'from-blue-900/30 to-dark-card',    'border-blue-500/30'],
-        ['nesam-hits',      'Nesam Hits',         'Latest Tamil & Kollywood',    'Trending now',           '🔥', 'from-orange-900/30 to-dark-card',  'border-orange-500/30'],
-        ['nesam-retro',     'Nesam Retro',        '80s–2000s Tamil Classics',    'Memories reloaded',      '💿', 'from-purple-900/30 to-dark-card',  'border-purple-500/30'],
-        ['nesam-kids',      'Nesam Kids',         'Children Stories & Songs',    'Fun for little ones',    '🌟', 'from-green-900/30 to-dark-card',   'border-green-500/30'],
+        ['nesam-fm',        'Nesam FM',         $ml->tr('Tamil Film Hits & Classics'), $ml->tr('Non-stop entertainment'), '🎬', 'from-red-900/40 to-dark-card',    'border-brand-red/30'],
+        ['nesam-devotional','Nesam Devotional',  $ml->tr('Devotional & Bhajans'),        $ml->tr('Peace for your soul'),    '🕉️', 'from-yellow-900/30 to-dark-card',  'border-yellow-500/30'],
+        ['nesam-news',      'Nesam News',         $ml->tr('Tamil Nadu & India News'),     $ml->tr('Stay updated in Tamil'),  '📰', 'from-blue-900/30 to-dark-card',    'border-blue-500/30'],
+        ['nesam-hits',      'Nesam Hits',         $ml->tr('Latest Tamil & Kollywood'),    $ml->tr('Trending now'),           '🔥', 'from-orange-900/30 to-dark-card',  'border-orange-500/30'],
+        ['nesam-retro',     'Nesam Retro',        $ml->tr('80s–2000s Tamil Classics'),    $ml->tr('Memories reloaded'),      '💿', 'from-purple-900/30 to-dark-card',  'border-purple-500/30'],
+        ['nesam-kids',      'Nesam Kids',         $ml->tr('Children Stories & Songs'),    $ml->tr('Fun for little ones'),    '🌟', 'from-green-900/30 to-dark-card',   'border-green-500/30'],
       ];
       foreach ($stationCards as [$id, $name, $genre, $tagline, $emoji, $grad, $border]):
       ?>
@@ -318,7 +317,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <!-- Play button -->
         <button class="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-brand-red text-white text-sm font-semibold rounded-full transition-all duration-200 group-hover:bg-brand-red">
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-          Play Now
+          <?= $ml->tr('Play Now') ?>
         </button>
       </div>
       <?php endforeach; ?>
@@ -326,7 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     <div class="text-center mt-8">
       <a href="/stations.php" id="view-all-stations-btn" class="btn-secondary inline-flex">
-        View All Channels →
+        <?= $ml->tr('View All Channels →') ?>
       </a>
     </div>
   </div>
@@ -337,16 +336,16 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="max-w-7xl mx-auto">
     <div class="text-center mb-12 animate-on-scroll">
       <span class="section-badge mb-4">✨ Why Choose Us</span>
-      <h2 class="text-3xl sm:text-4xl font-black text-white mb-3">Why Nesam Radio?</h2>
-      <p class="text-gray-400 max-w-xl mx-auto">We're not just a radio station – we're a community that celebrates Tamil culture, language, and love.</p>
+      <h2 class="text-3xl sm:text-4xl font-black text-white mb-3"><?= $ml->tr('Why Nesam Radio?') ?></h2>
+      <p class="text-gray-400 max-w-xl mx-auto"><?= $ml->tr("We're not just a radio station – we're a community that celebrates Tamil culture, language, and love.") ?></p>
     </div>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
       <?php foreach ([
-        ['🎵','Crystal-Clear Streaming','24/7 HD audio with zero buffering on any device or connection.'],
-        ['🇮🇳','Tamil-First Content','Every song, show, and story crafted for Tamilians worldwide.'],
-        ['📱','Listen Everywhere','Web, mobile, smart TV – music follows you anywhere.'],
-        ['❤️','Community Driven','Your song requests, your playlists, your radio.'],
+        ['🎵',$ml->tr('Crystal-Clear Streaming'),$ml->tr('24/7 HD audio with zero buffering on any device or connection.')],
+        ['🇮🇳',$ml->tr('Tamil-First Content'),$ml->tr('Every song, show, and story crafted for Tamilians worldwide.')],
+        ['📱',$ml->tr('Listen Everywhere'),$ml->tr('Web, mobile, smart TV – music follows you anywhere.')],
+        ['❤️',$ml->tr('Community Driven'),$ml->tr('Your song requests, your playlists, your radio.')],
       ] as [$icon,$h,$p]): ?>
       <div class="glass-card rounded-2xl p-6 card-hover animate-on-scroll text-center">
         <div class="text-4xl mb-4"><?= $icon ?></div>
@@ -364,9 +363,9 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-10 animate-on-scroll">
       <div>
         <span class="section-badge mb-3">🎙️ Podcasts</span>
-        <h2 class="text-3xl sm:text-4xl font-black text-white">Listen Again – Podcasts &amp; Shows</h2>
+        <h2 class="text-3xl sm:text-4xl font-black text-white"><?= $ml->tr('Listen Again – Podcasts &amp; Shows') ?></h2>
       </div>
-      <a href="/podcasts.php" class="btn-outline text-sm shrink-0">All Episodes →</a>
+      <a href="/podcasts.php" class="btn-outline text-sm shrink-0"><?= $ml->tr('All Episodes →') ?></a>
     </div>
 
     <?php
@@ -404,10 +403,10 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="flex gap-2">
             <button onclick="playStation('nesam-fm')"
                     class="flex-1 btn-primary text-xs py-2 px-3 rounded-lg justify-center">
-              ▶ Play
+              ▶ <?= $ml->tr('Play') ?>
             </button>
             <a href="/podcasts.php" class="flex-1 btn-outline text-xs py-2 px-3 rounded-lg justify-center text-center">
-              Details
+              <?= $ml->tr('Details') ?>
             </a>
           </div>
         </div>
@@ -423,9 +422,9 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-10 animate-on-scroll">
       <div>
         <span class="section-badge mb-3">📰 News & Blog</span>
-        <h2 class="text-3xl sm:text-4xl font-black text-white">Latest from Nesam</h2>
+        <h2 class="text-3xl sm:text-4xl font-black text-white"><?= $ml->tr('Latest from Nesam') ?></h2>
       </div>
-      <a href="/blog.php" class="btn-outline text-sm shrink-0">All Articles →</a>
+      <a href="/blog.php" class="btn-outline text-sm shrink-0"><?= $ml->tr('All Articles →') ?></a>
     </div>
 
     <?php
@@ -458,7 +457,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <p class="text-gray-400 text-sm leading-relaxed mb-4"><?= h(substr($post['excerpt'] ?? '',0,110)) ?>…</p>
           <a href="/blog.php?slug=<?= h($post['slug'] ?? $post['id']) ?>"
              class="text-brand-blue text-sm font-semibold hover:text-brand-red transition-colors">
-            Read More →
+            <?= $ml->tr('Read More →') ?>
           </a>
         </div>
       </article>
@@ -476,18 +475,18 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="relative z-10">
           <div class="text-5xl mb-4">❤️</div>
           <h2 class="text-3xl sm:text-4xl font-black text-white mb-3">
-            Ready to Feel the Love?
+            <?= $ml->tr('Ready to Feel the Love?') ?>
           </h2>
           <p class="text-gray-300 max-w-xl mx-auto mb-8">
-            Join 10,000+ Tamilians who start their day with Nesam Radio. No signup needed – just pure Tamil music and culture.
+            <?= $ml->tr('Join 10,000+ Tamilians who start their day with Nesam Radio. No signup needed – just pure Tamil music and culture.') ?>
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <button onclick="playStation('nesam-fm')" id="cta-play-btn" class="btn-primary text-base px-8 py-4 rounded-xl shadow-lg shadow-brand-red/30">
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-              Listen Live for Free
+              <?= $ml->tr('Listen Live for Free') ?>
             </button>
             <a href="/contact.php#request-song" id="cta-request-btn" class="btn-outline text-base px-8 py-4 rounded-xl">
-              🎵 Request Your Song
+              <?= $ml->tr('🎵 Request Your Song') ?>
             </a>
           </div>
         </div>

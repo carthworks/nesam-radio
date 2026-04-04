@@ -6,7 +6,7 @@ class MultiLang{
 			$USE_COOKIES,
 			$lang_file,
 			$dictionary,
-			$languages_dir = __DIR__.'/../languages/',
+			$languages_dir = __DIR__.'/languages/',
 			$DEFAULT_LANGUAGE = 'TA',
 			$untranslated_logging = true,
 			$last_translated = false;
@@ -30,10 +30,10 @@ class MultiLang{
 		}
 
 		if(empty($this->lang)){
-
-			$this->setLanguage($this->DEFAULT_LANGUAGE);
+			$this->lang = $this->DEFAULT_LANGUAGE;
 		}
 
+		$this->setLanguage($this->lang);
 	}
 	
 	
@@ -159,9 +159,9 @@ class MultiLang{
 
 		if(file_exists($this->lang_file)){
 
-			require $this->lang_file;
+			require_once $this->lang_file;
 
-			$this->dictionary = ${$this->lang};
+			$this->dictionary = array_change_key_case(${$this->lang}, CASE_LOWER);
 		}
 	}
 

@@ -23,7 +23,7 @@ include 'partials/header.php';
     <div class="grid lg:grid-cols-2 gap-14 items-center mb-20">
       <div class="animate-on-scroll space-y-5">
         <p class="text-gray-300 text-lg leading-relaxed">
-          <strong class="text-white">Nesam Media Works</strong> was founded with a simple dream — to bring the warmth of Tamil culture,
+          <strong class="text-white"><?= $ml->tr('Nesam Media') ?> Works</strong> was founded with a simple dream — to bring the warmth of Tamil culture,
           music, and stories to every listener across the globe.
         </p>
         <p class="text-gray-400 leading-relaxed">

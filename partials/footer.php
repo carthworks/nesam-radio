@@ -20,11 +20,11 @@
       <div class="flex items-center gap-2 mb-0.5">
         <span class="live-dot w-2 h-2 rounded-full bg-brand-red flex-shrink-0" id="sticky-live-dot"></span>
         <span id="np-station" class="text-[10px] sm:text-xs font-bold text-brand-red uppercase tracking-widest">Nesam FM</span>
-        <span id="sticky-stream-status" class="px-1.5 py-0.5 bg-brand-red/20 border border-brand-red/30 text-brand-red rounded-sm text-[9px] font-bold uppercase tracking-wider ml-0.5">Live</span>
+        <span id="sticky-stream-status" class="px-1.5 py-0.5 bg-brand-red/20 border border-brand-red/30 text-brand-red rounded-sm text-[9px] font-bold uppercase tracking-wider ml-0.5"><?= $ml->tr('Live') ?></span>
       </div>
       <div class="flex items-baseline gap-1.5">
-        <span class="text-[10px] text-gray-500 uppercase tracking-widest font-bold hidden sm:inline-block flex-shrink-0">Now Playing:</span>
-        <div id="np-song" class="text-xs sm:text-sm font-semibold text-white truncate w-full">Loading...</div>
+        <span class="text-[10px] text-gray-500 uppercase tracking-widest font-bold hidden sm:inline-block flex-shrink-0"><?= $ml->tr('Now Playing:') ?></span>
+        <div id="np-song" class="text-xs sm:text-sm font-semibold text-white truncate w-full"><?= $ml->tr('Loading...') ?></div>
       </div>
     </div>
 
@@ -74,12 +74,12 @@
         <a href="<?= BASE_PATH ?>/" class="flex items-center gap-3 mb-4">
           <img src="<?= BASE_PATH ?>/assets/images/logo.png" alt="Nesam Media Logo" class="h-12 w-auto" onerror="this.src='<?= BASE_PATH ?>/nesam_media_logo.png'">
           <div>
-            <div class="text-lg font-bold text-white">Nesam Radio</div>
-            <div class="text-xs text-brand-red font-semibold">Radio with Love ❤️</div>
+            <div class="text-lg font-bold text-white"><?= $ml->tr('Nesam Radio') ?></div>
+            <div class="text-xs text-brand-red font-semibold"><?= $ml->tr('Radio with Love ❤️') ?></div>
           </div>
         </a>
         <p class="text-gray-400 text-sm leading-relaxed mb-4">
-          Tamil Nadu & Puducherry's favourite online radio. Spreading love through music, culture, and stories since 2020.
+          <?= $ml->tr('Tamil Nadu & Puducherry\'s favourite online radio. Spreading love through music, culture, and stories since 2020.') ?>
         </p>
         <!-- Social links -->
         <div class="flex gap-3">
@@ -108,16 +108,16 @@
 
       <!-- Quick Links -->
       <div>
-        <h3 class="text-white font-semibold mb-4 text-sm uppercase tracking-wide">Quick Links</h3>
+        <h3 class="text-white font-semibold mb-4 text-sm uppercase tracking-wide"><?= $ml->tr('Quick Links') ?></h3>
         <ul class="space-y-2 text-sm">
           <?php foreach ([
-            [BASE_PATH.'/live.php','🎵 Listen Live'],
-            [BASE_PATH.'/stations.php','📻 All Stations'],
-            [BASE_PATH.'/schedule.php','🕐 Schedule'],
-            [BASE_PATH.'/podcasts.php','🎙️ Podcasts'],
-            [BASE_PATH.'/blog.php','📰 Blog & News'],
-            [BASE_PATH.'/about.php','ℹ️ About Us'],
-            [BASE_PATH.'/contact.php','📞 Contact'],
+            [BASE_PATH.'/live.php','🎵 ' . $ml->tr('Listen Live Now')],
+            [BASE_PATH.'/stations.php','📻 ' . $ml->tr('Stations')],
+            [BASE_PATH.'/schedule.php','🕐 ' . $ml->tr('Schedule')],
+            [BASE_PATH.'/podcasts.php','🎙️ ' . $ml->tr('Podcasts')],
+            [BASE_PATH.'/blog.php','📰 ' . $ml->tr('Blog')],
+            [BASE_PATH.'/about.php','ℹ️ ' . $ml->tr('About')],
+            [BASE_PATH.'/contact.php','📞 ' . $ml->tr('Contact')],
           ] as [$href,$lbl]): ?>
           <li><a href="<?= $href ?>" class="text-gray-400 hover:text-white transition-colors"><?= $lbl ?></a></li>
           <?php endforeach; ?>
@@ -126,7 +126,7 @@
 
       <!-- Stations -->
       <div>
-        <h3 class="text-white font-semibold mb-4 text-sm uppercase tracking-wide">Our Channels</h3>
+        <h3 class="text-white font-semibold mb-4 text-sm uppercase tracking-wide"><?= $ml->tr('Our Channels') ?></h3>
         <ul class="space-y-2 text-sm">
           <?php foreach ([
             'Nesam FM','Nesam Devotional','Nesam News','Nesam Hits','Nesam Retro','Nesam Kids'
@@ -144,7 +144,7 @@
 
       <!-- Contact -->
       <div>
-        <h3 class="text-white font-semibold mb-4 text-sm uppercase tracking-wide">Contact Us</h3>
+        <h3 class="text-white font-semibold mb-4 text-sm uppercase tracking-wide"><?= $ml->tr('Contact Us') ?></h3>
         <ul class="space-y-3 text-sm text-gray-400">
           <li class="flex gap-2">
             <svg class="w-4 h-4 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -171,7 +171,7 @@
         <a href="<?= BASE_PATH ?>/contact.php#request-song" id="footer-request-song"
            class="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-brand-blue/20 border border-brand-blue/40
                   text-brand-blue text-sm font-medium rounded-lg hover:bg-brand-blue/30 transition-colors">
-          🎵 Request a Song
+          <?= $ml->tr('🎵 Request a Song') ?>
         </a>
       </div>
 
@@ -179,10 +179,10 @@
 
     <!-- Divider -->
     <div class="border-t border-dark-border mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-500">
-      <p>© <?= date('Y') ?> Nesam Media Works. Made with ❤️ in Tamil Nadu & Puducherry.</p>
+      <p><?= $ml->tr('© 2026 Nesam Media Works. Made with ❤️ in Tamil Nadu & Puducherry.') ?></p>
       <p>
-        <a href="<?= BASE_PATH ?>/privacy.php" class="hover:text-gray-300 transition-colors">Privacy Policy</a> ·
-        <a href="<?= BASE_PATH ?>/terms.php"   class="hover:text-gray-300 transition-colors">Terms</a>
+        <a href="<?= BASE_PATH ?>/privacy.php" class="hover:text-gray-300 transition-colors"><?= $ml->tr('Privacy Policy') ?></a> ·
+        <a href="<?= BASE_PATH ?>/terms.php"   class="hover:text-gray-300 transition-colors"><?= $ml->tr('Terms') ?></a>
       </p>
     </div>
   </div>
